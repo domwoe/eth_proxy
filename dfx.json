@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "eth_proxy_backend": {
+      "candid": "src/eth_proxy_backend/eth_proxy_backend.did",
+      "package": "eth_proxy_backend",
+      "type": "rust"
+    },
+    "eth_proxy_frontend": {
+      "dependencies": [
+        "eth_proxy_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/eth_proxy_frontend/src/index.html"
+      },
+      "source": [
+        "src/eth_proxy_frontend/assets",
+        "dist/eth_proxy_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}

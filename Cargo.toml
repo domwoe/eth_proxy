@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "src/eth_proxy_backend",
+]
