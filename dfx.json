@@ -11,16 +11,6 @@
         }
       }
     },
-    "proxy_manager": {
-      "candid": "src/proxy_manager/proxy_manager.did",
-      "package": "proxy_manager",
-      "type": "rust"
-    },
-    "eth_proxy_backend": {
-      "candid": "src/eth_proxy_backend/eth_proxy_backend.did",
-      "package": "eth_proxy_backend",
-      "type": "rust"
-    },
     "eth_proxy_shared": {
       "candid": "src/eth_proxy_shared/eth_proxy_shared.did",
       "package": "eth_proxy_shared",
@@ -35,17 +25,6 @@
       },
       "source": [
         "dist/"
-      ],
-      "type": "assets"
-    },
-    "swap_backend": {
-      "candid": "src/swap_backend/swap_backend.did",
-      "package": "swap_backend",
-      "type": "rust"
-    },
-    "swap_frontend": {
-      "source": [
-        "src/swap_frontend/dist/"
       ],
       "type": "assets"
     }

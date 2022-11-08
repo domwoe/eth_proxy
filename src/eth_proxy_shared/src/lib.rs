@@ -22,25 +22,16 @@ use std::cell::RefCell;
 use types::*;
 
 // TODO:
-// - Frontend
-// - Block Number
-// - Sign Delegation
+// - Frontend sending tx id to swap canister
 // - Get Principal from ETH Address
+// - Implement token transfer
+// Stretch goals
 // - ERC 721
+// - Sign Delegation
 
 thread_local! {
     static CONF: RefCell<Conf> = RefCell::new(Conf::default());
     static ERC20_ABI: abi::Abi = serde_json::from_str(include_str!("erc20.json")).unwrap();
-    static TOKENS: phf::Map<&'static str, &'static str> = phf_map! {
-        // WXTC
-        "0x71c7656ec7ab88b098defb751b7401b5f6d89761" => "aanaa-xaaaa-aaaah-aaeiq-cai",
-        // WICP
-        "0x71c7656ec7ab88b098defb751b7401b5f6d89763" => "utozz-siaaa-aaaam-qaaxq-cai",
-        // OGY
-        "0x71c7656ec7ab88b098defb751b7401b5f6d89764" => "jwcfb-hyaaa-aaaaj-aac4q-cai",
-        // ckETH
-        "0x71c7656ec7ab88b098defb751b7401b5f6d89765" => "jwcfb-hyaaa-aaaaj-aac4q-cai",
-    };
 
 }
 

@@ -1,21 +1,18 @@
 # MetaMask Proxy Canister PoC
 
-This Proof of Concept shows how MetaMask could be used on the Internet Computer, by using a proxy canister that acts as a personal JSON RPC Provider.
+This Proof of Concept shows how MetaMask could be used on the Internet Computer, by using a proxy canister that acts as JSON RPC Provider.
 The proxy can be used to translate certain EVM contract calls to calls on the Internet Computer. This demo aims to implement this for DIP20 contract calls.
 
 ## Architecture
 
-![Architecture](./assets/metamask_ic_proxy_demo.svg)
 
 ## Demo Flow
-
-
 
 ## Status and To Dos
 
 [x] Proxy canister as MetaMask JSON RPC Provider 
+[x] Send and receive ICP
 [x] Fake ERC20 related calls in proxy canister, in particular `transfer`
-[ ] Proxy manager canister that is able to create a proxy canister for an Ethereum address dynamically 
 
 
 ## Issues
