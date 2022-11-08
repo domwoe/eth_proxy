@@ -1,37 +1,33 @@
-# eth_proxy
+# MetaMask Proxy Canister PoC
 
-Welcome to your new eth_proxy project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+This Proof of Concept shows how MetaMask could be used on the Internet Computer, by using a proxy canister that acts as a personal JSON RPC Provider.
+The proxy can be used to translate certain EVM contract calls to calls on the Internet Computer. This demo aims to implement this for DIP20 contract calls.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Architecture
 
-To learn more before you start working with eth_proxy, see the following documentation available online:
+![Architecture](./assets/metamask_ic_proxy_demo.svg)
 
-- [Quick Start](https://smartcontracts.org/docs/quickstart/quickstart-intro.html)
-- [SDK Developer Tools](https://smartcontracts.org/docs/developers-guide/sdk-guide.html)
-- [Rust Canister Devlopment Guide](https://smartcontracts.org/docs/rust-guide/rust-intro.html)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://smartcontracts.org/docs/candid-guide/candid-intro.html)
-- [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.ic0.app)
+## Demo Flow
 
-If you want to start working on your project right away, you might want to try the following commands:
 
-```bash
-cd eth_proxy/
-dfx help
-dfx canister --help
-```
 
-## Running the project locally
+## Status and To Dos
 
-If you want to test your project locally, you can use the following commands:
+[x] Proxy canister as MetaMask JSON RPC Provider 
+[x] Fake ERC20 related calls in proxy canister, in particular `transfer`
+[ ] Proxy manager canister that is able to create a proxy canister for an Ethereum address dynamically 
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
+## Issues
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+
+### Mapping from Ethereum addresses to principals
+
+### Authentication of calls
+
+All calls to the proxy canister are made using the anonymous identity, i.e. are unauthenticated. This is not a super big issue, since the actual transactions are signed and can be verified inside the proxy canister.
+However, there are still some update calls, that are a bit problematic, i.e. RPC calls to get the current block number or the current transaction count. MetaMask seems to keep track of the current block height and makes frequent calls to the RPC provider to get the latest block height. If we don't increase our fake block height MetaMask won't do any other calls. In our current naive implementation, we just increase the block height by one every time this request is made. We do the same for the transaction count request, which determines the nonce MetaMask uses when creating a transaction. Ideally, these calls should only be allowed by the owner. A quick fix would be to introduce an API key that is added as a query parameter.
+
+### Usage of the raw domain
+
+

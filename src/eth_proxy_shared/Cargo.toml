@@ -1,5 +1,5 @@
 [package]
-name = "eth_proxy_backend"
+name = "eth_proxy_shared"
 version = "0.1.0"
 edition = "2021"
 
@@ -10,16 +10,20 @@ crate-type = ["cdylib"]
 
 [dependencies]
 candid = "0.8"
+ciborium = { git = "https://github.com/enarx/ciborium", rev = "e719537c99b564c3674a56defe53713c702c6f46" }
 ethers-core = { git = "https://github.com/gakonst/ethers-rs" }
 getrandom = { version = "^0.2.7", features = ["custom"]}
 hex = "0.4.3"
 ic-cdk = "0.6.1"
 ic-cdk-macros = "0.6.1"
+ic-ledger-types = "0.2.0"
+ic-types ="0.5.0"
 k256 = { version = "0.11.4", features = ["ecdsa"], default-features = false }
 phf = { version = "0.11.1", default-features = false, features = ["macros"] }
 serde = "1"
 serde_bytes = "0.11"
 serde_json = "1.0"
 serde_with = { version = "1.9.4", features = ["json"] } 
+sha2 = "0.9.9"
 
 

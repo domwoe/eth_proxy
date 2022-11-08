@@ -1,0 +1,14 @@
+{
+  "eth_proxy_backend": {
+    "ic": "zyij3-ryaaa-aaaak-qaxpa-cai"
+  },
+  "eth_proxy_frontend": {
+    "ic": "dyqlv-5qaaa-aaaap-qatea-cai"
+  },
+  "eth_proxy_shared": {
+    "ic": "ezw7y-fqaaa-aaaap-qatua-cai"
+  },
+  "swap_frontend": {
+    "ic": "bzj7m-zyaaa-aaaap-qatjq-cai"
+  }
+}

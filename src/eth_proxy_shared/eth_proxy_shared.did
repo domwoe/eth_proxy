@@ -1,0 +1,7 @@
+type Conf = record {
+  ledger_canister_id : principal;
+};
+
+service : (Conf) -> {
+    "get_account": (text) -> (text) query;
+}

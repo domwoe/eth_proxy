@@ -1,0 +1,4 @@
+service : {
+    "create_proxy": (text) -> (variant { Ok: blob; Err: text });
+    "get_proxy": (text) -> (variant { Ok: text; Err: text }) query;
+}

@@ -2,30 +2,23 @@
   "name": "eth_proxy_frontend",
   "version": "0.1.0",
   "description": "Internet Computer starter application",
-  "keywords": ["Internet Computer", "Motoko", "JavaScript", "Canister"],
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
   "scripts": {
-    "build": "webpack",
-    "prebuild": "npm run generate",
-    "start": "webpack serve --mode development --env development",
-    "prestart": "npm run generate",
-    "generate": "dfx generate eth_proxy_backend"
+    "dev": "vite",
+    "serve": "vite preview",
+    "build": "vite build",
+    "generate": "dfx generate"
   },
   "devDependencies": {
-    "@dfinity/agent": "0.14.0",
-    "@dfinity/candid": "0.14.0",
-    "@dfinity/principal": "0.14.0",
-    "assert": "2.0.0",
-    "buffer": "6.0.3",
-    "copy-webpack-plugin": "^11.0.0",
-    "events": "3.3.0",
-    "html-webpack-plugin": "5.5.0",
-    "process": "0.11.10",
-    "stream-browserify": "3.0.0",
-    "terser-webpack-plugin": "^5.3.3",
-    "util": "0.12.4",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.8.1"
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/compiler-sfc": "^3.2.37",
+    "buffer": "^6.0.3",
+    "vite": "^2.9.13"
   },
   "engines": {
     "node": "^12 || ^14 || ^16 || ^18"
@@ -35,5 +28,12 @@
     "last 2 firefox version",
     "last 2 safari version",
     "last 2 edge version"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/agent": "0.14.0",
+    "@dfinity/candid": "0.14.0",
+    "@dfinity/principal": "0.14.0",
+    "vue": "^3.2.37",
+    "vuetify": "^3.0.0"
+  }
 }

@@ -1,4 +1,6 @@
 [workspace]
 members = [
+    "src/proxy_manager",
     "src/eth_proxy_backend",
+    "src/eth_proxy_shared",
 ]
